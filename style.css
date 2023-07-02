@@ -8,6 +8,16 @@
   scroll-behavior: smooth;
 }
 
+:root{
+   
+  --primary:hsl(224, 89%, 60%);
+  --light-primary:hsl(224, 89%, 60%);
+  --white:#f1f1f1;
+  --icon:hsl(123, 75%, 25%);
+
+  --box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
     width: 10px;
@@ -28,8 +38,10 @@
 nav{
   position: fixed;
   width: 100%;
+  height: 5rem;
+  box-shadow: var(--box-shadow);
   padding: 20px 0;
-  background-color: rgb(121, 10, 10);
+  background-color: transparent;
   z-index: 998;
   transition: all 0.3s ease;
   font-family: 'Ubuntu', sans-serif;
@@ -64,12 +76,12 @@ nav .navbar .menu li{
 .navbar .menu a{
   font-size: 18px;
   font-weight: 500;
-  color: #f0f3f5;
+  color: var(--primary);
   padding: 6px 0;
   transition: all 0.4s ease;
 }
 .navbar .menu a:hover{
-  color: #4070f4;
+  color: var(--icon);
 }
 nav.sticky .menu a{
   color: #FFF;
@@ -96,13 +108,14 @@ nav .menu-btn,
   color: #fff;
   right: 30px;
   top: 20px;
-  font-size: 20px;
+  font-size: 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: none;
 }
 nav .menu-btn{
   color: #4070f4;
+  font-size: 2rem;
 }
 nav.sticky .menu-btn{
   color: #FFF;
@@ -113,25 +126,36 @@ nav.sticky .menu-btn{
 
 /* home section styling */
 .home{
-  height: 100vh;
+  top: 0;
+  height: calc(100vh - 5rem);
   width: 100%;
-  background: url("images/background1.png") no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: scroll;
-  font-family: 'Ubuntu', sans-serif;
+ 
+  
 }
 .home .home-content{
   width: 90%;
   height: 100%;
-  margin: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  gap: 2rem;
 }
+
+.image{
+  height: 30rem;
+  width: 30rem;
+  top: 0;
+  border-radius: 50% 50% 0 0;
+  overflow: hidden;
+}
+
+
+
 .home .text-one{
   font-size: 25px;
-  color: #e4e9ec;
+  color:var(--primary);
 }
 .home .text-two{
   color: #2e6e92;
@@ -149,12 +173,7 @@ nav.sticky .menu-btn{
   margin: 5px 0;
   color: #9cbe5c;
 }
-.text-content{
-  position: absolute;
-  top: 33%;
-  left: 7%;
-  z-index: 12;
-}
+
 header .text-content .text{
   font-size: 27px;
   color: #2c3350;
@@ -193,6 +212,7 @@ color: #2c3350;
 
 .home .button{
   margin: 14px 0;
+ 
 }
 .home .button button{
   outline: none;
@@ -200,6 +220,7 @@ color: #2c3350;
   border-radius: 6px;
   font-size: 25px;
   font-weight: 400;
+  box-shadow: var(--box-shadow);
   background: #4070f4;
   color: #fff;
   cursor: pointer;
@@ -485,11 +506,7 @@ footer .text span a:hover{
   .home{
     height: 100vh;
     width: 100%;
-    background: url("images/background1.png") no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    font-family: 'Ubuntu', sans-serif;
+    
   }
   @keyframes typing{
     0%{
@@ -552,6 +569,28 @@ footer .text span a:hover{
     font-size: 13px;
   } 
 
+  .home .home-content{
+    width: 90%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:5rem;
+    gap: 2rem;
+
+  }
+
+  .text-content{
+    margin-top: -3rem;
+  }
+  .image{
+    height: 23rem;
+    width: 23rem;
+     display: flex;
+     justify-content: center;
+
+  }
   .skills .skills-details{
     align-items: center;
     justify-content: center;
